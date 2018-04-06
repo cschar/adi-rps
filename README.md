@@ -15,8 +15,10 @@ experiments w/ maps and rails
 build
 > docker build -t adiprod --file '<PATH_TO_DIR>/Dockerfile.prod' .
 
+
 pass in secret key 
 ```
+rake secret
 export SECRET_KEY_BASE=<your_key>
 docker-compose up  #dont need to pass in, will take environment from shell
 #or detached 
