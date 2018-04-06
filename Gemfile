@@ -38,7 +38,8 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'jquery-rails'
 gem 'gon'
 gem 'sidekiq'
-
+gem 'graphql'
+gem 'json_web_token'
 
 
 
@@ -69,3 +70,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'mini_racer', platforms: :ruby
+
+gem 'graphiql-rails', group: :development

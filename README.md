@@ -1,12 +1,13 @@
-# README
-
-#adi
+# Adi <span style="color:blue"> geo game.</span>
 
 experiments w/ maps and rails
 
 
 
 
+TODOS:
+
+- graphql: acces user_info and lmarkers... __at the same time__
 
 
 
@@ -52,6 +53,21 @@ docker run -it --net=host mytag/adi
 docker exec -it bundle exec rails test
 ```
 
+##### (hackish) Develop locally w/ docker-compose
+
+uncomment out the volume.
+when a new component is needed:
+```
+# update code, add a gem etc..
+# modify docker-compose cmd for web service:
+git pull / git commit 
+docker-compose stop
+cmd: bash -c "bundle install; runserver etc.."
+outside container...
+cd client && yarn install && cd ..
+bundle exec rake assets:precompile
+docker-compose up
+```
 
 #### docker hub for gitlab runner integration
 ```

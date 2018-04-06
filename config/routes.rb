@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
+
+  post "/graphql", to: "graphql#execute"
   resources :lmarkers
   devise_for :users
+  get '/users/info', to: 'user_info#show', constraints: lambda { |req| req.format == :json }
 
   get 'hello_world', to: 'hello_world#index'
-
-  get '/signup', to: 'static_pages#index'
-  get '/login', to: 'static_pages#index'
-  get '/logout', to: 'static_pages#index'
 
   # get '/markers', to ''
 
