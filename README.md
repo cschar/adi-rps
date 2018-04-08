@@ -42,6 +42,12 @@ docker-compose stop
 docker-compose start
 ```
 
+delete data
+```
+docker-compose exec web rails console
+> Lmarker.all.delete_all
+```
+
 
 #### Testing locally w/ Docker
 
